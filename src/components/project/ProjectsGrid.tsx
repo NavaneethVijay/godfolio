@@ -27,7 +27,7 @@ import Link from "next/link";
 export function ProjectsGrid() {
   return (
     <div className="container mx-auto py-10">
-      <BentoGrid className="md:auto-rows-[20rem] grid-cols-1 md:grid-cols-4">
+      <BentoGrid className="md:auto-rows-[22rem] grid-cols-1 md:grid-cols-4">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -43,7 +43,7 @@ export function ProjectsGrid() {
   );
 }
 
-const SkeletonOne = () => {
+const ArcBrowser = () => {
   const variants = {
     initial: {
       x: 0,
@@ -65,7 +65,7 @@ const SkeletonOne = () => {
     >
       <motion.div
         variants={variants}
-        className="rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-1  items-start space-x-2 bg-white dark:bg-black"
+        className="rounded-2xl overflow-hidden items-start space-x-2 bg-white dark:bg-black"
       >
         <img
           src="/tools/arc.png"
@@ -76,7 +76,7 @@ const SkeletonOne = () => {
     </motion.div>
   );
 };
-const SkeletonTwo = () => {
+const VSCode = () => {
   const variants = {
     initial: {
       width: 0,
@@ -115,7 +115,7 @@ const SkeletonTwo = () => {
     </motion.div>
   );
 };
-const SkeletonThree = () => {
+const WarpTerminal = () => {
   const variants = {
     initial: {
       x: 0,
@@ -147,7 +147,7 @@ const SkeletonThree = () => {
     </motion.div>
   );
 };
-const SkeletonFour = () => {
+const DefaultStack = () => {
   const first = {
     initial: {
       x: 20,
@@ -214,7 +214,7 @@ const SkeletonFour = () => {
           Supabase, Stack Auth
         </p>
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          3rd Party services
+          Services
         </p>
       </motion.div>
     </motion.div>
@@ -242,7 +242,7 @@ const RayCast = () => {
     >
       <motion.div
         variants={variants}
-        className="rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-1  items-start space-x-2 bg-white dark:bg-black"
+        className="rounded-2xl overflow-hidden items-start space-x-2 bg-white dark:bg-black"
       >
         <img
           src="/tools/raycast.png"
@@ -276,7 +276,7 @@ const TickTick = () => {
     >
       <motion.div
         variants={variants}
-        className="rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-1  items-start space-x-2 bg-white dark:bg-black"
+        className="rounded-2xl overflow-hidden border border-neutral-100 dark:border-white/[0.2]  items-start space-x-2 bg-white dark:bg-black"
       >
         <img
           src="/tools/tick-tick.png"
@@ -297,10 +297,11 @@ const items = [
     ),
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        Arc reshapes browsing for productivity, organizing tabs and tools
+        perfectly around my workflow—now it’s my go-to browser.
       </span>
     ),
-    header: <SkeletonOne />,
+    header: <ArcBrowser />,
     className: "md:col-span-1",
     icon: <IconBrowser className="h-4 w-4 text-neutral-500" />,
   },
@@ -308,10 +309,11 @@ const items = [
     title: "VS Code",
     description: (
       <span className="text-sm">
-        Let AI handle the proofreading of your documents.
+        VS Code feels like home for coding—customizable, powerful, and packed
+        with extensions that adapt to any project I tackle.
       </span>
     ),
-    header: <SkeletonTwo />,
+    header: <VSCode />,
     className: "md:col-span-1",
     icon: <IconBrandVscode className="h-4 w-4 text-neutral-500" />,
   },
@@ -323,11 +325,11 @@ const items = [
     ),
     description: (
       <span className="text-sm">
-        My go to terminal for all my work, works like an IDE with AI for quick
-        search.
+        Warp’s modern interface and command suggestions transformed my terminal
+        experience—faster, smoother, and way more enjoyable
       </span>
     ),
-    header: <SkeletonThree />,
+    header: <WarpTerminal />,
     className: "md:col-span-2",
     icon: <IconTerminal className="h-4 w-4 text-neutral-500" />,
   },
@@ -338,20 +340,25 @@ const items = [
         Understand the sentiment of your text with AI analysis.
       </span>
     ),
-    header: <SkeletonFour />,
+    header: <DefaultStack />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
 
   {
     title: (
-      <Link href="https://www.raycast.com/" target="_blank" className="underline">
+      <Link
+        href="https://www.raycast.com/"
+        target="_blank"
+        className="underline"
+      >
         Raycast
       </Link>
     ),
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+        Raycast keeps me in my flow, instantly bringing up tools and commands
+        without breaking focus—it’s indispensable.
       </span>
     ),
     header: <RayCast />,
@@ -366,7 +373,8 @@ const items = [
     ),
     description: (
       <span className="text-sm">
-        A task manager that helps me get things done.
+        TickTick keeps my projects organized effortlessly, with reminders and
+        tracking that help me stay productive and focused.
       </span>
     ),
     header: <TickTick />,

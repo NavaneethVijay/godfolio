@@ -55,7 +55,7 @@ export default function HomePage() {
                 </button>
               </div>
 
-              <div className="grid grid-cols-6 md:grid-cols-6 gap-6 mt-8 px-6 md:px-0 mt-10 ">
+              <div className="grid grid-rows-[10rem] grid-cols-6 md:grid-cols-6 gap-6 px-6 md:px-0 mt-10  md:grid-rows-none">
                 <div className="rounded-xl col-span-6 md:col-span-4 flex flex-col">
                   <iframe
                     style={{ borderRadius: "12px" }}
@@ -68,10 +68,10 @@ export default function HomePage() {
                     loading="lazy"
                   ></iframe>
                 </div>
-                <div className="md:col-span-2">
+                <div className="col-span-4 md:col-span-2">
                   <img
                     style={{ height: "232px" }}
-                    className="object-cover w-full h-full rounded-xl overflow-hidden flex items-stretch"
+                    className="object-cover w-full h-90 rounded-xl overflow-hidden flex items-stretch"
                     src="/bangalore.png"
                     alt="family"
                   />
