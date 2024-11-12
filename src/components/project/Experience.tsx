@@ -66,10 +66,10 @@ export function Experience() {
 
   const SkillSection = ({ title, skills }: { title: string; skills: string[] }) => (
     <div>
-      <h3 className="font-semibold mb-2">{title}</h3>
-      <ul className="list-disc pl-5">
+      <h3 className="font-semibold mb-2 font-libreFranklint">{title}</h3>
+      <ul className="list-disc pl-5 ">
         {skills.map((skill, index) => (
-          <li className="font-libreFranklin dark:text-gray-300 tracking-wide " key={index}>
+          <li className="font-libreFranklin dark:text-neutral-300 tracking-wide font-libreFranklint" key={index}>
             {skill}
           </li>
         ))}

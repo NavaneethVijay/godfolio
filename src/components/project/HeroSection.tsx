@@ -11,7 +11,7 @@ export default function HeroSection() {
     // <BackgroundBeamsWithCollision>
     <div
       className="md:h-[45rem] bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-black relative
-    flex flex-col gap-10 items-center w-full justify-center overflow-hidden text-center px-6 md:px-0 py-20 md:py-10
+    flex flex-col gap-10 items-center w-full justify-center overflow-hidden text-center px-6 md:px-0 pt-[12rem] pb-10 md:py-10
     "
     >
       <div>
@@ -19,16 +19,16 @@ export default function HeroSection() {
           <h2 className="font-cinzel relative z-20 text-4xl font-bold text-black dark:text-white font-sans tracking-tight leading-tight">
             Hey there!
           </h2>
-          <h2 className="relative z-20 font-cinzel text-4xl lg:text-6xl ml-4 bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 md:py-4">
+          <h1 className="relative z-20 font-cinzel text-4xl lg:text-6xl ml-4 bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 md:py-4">
             I'm Navaneeth Vijay
-          </h2>
+          </h1>
 
           <h2 className="font-norican text-2xl md:text-4xl tracking-wide relative mx-auto inline-block text-center [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
             I solve <FlipWords words={words} /> problems
           </h2>
         </div>
         <div className="flex flex-col mt-10 gap-4">
-          <h3 className="z-20 text-lg md:text-xl dark:text-neutral-400 max-w-4xl mx-auto font-light font-libreFranklin">
+          <h3 className="z-20 text-lg md:text-xl dark:text-neutral-300 font-light font-libreFranklin max-w-4xl mx-auto ">
             A practical and solutions-driven software engineer specializing in
             creating scalable, efficient systems that blend technical integrity
             with seamless user experiences.

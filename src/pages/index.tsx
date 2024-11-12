@@ -27,10 +27,6 @@ import ContactMe from "@/components/project/contactMe";
 export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>Navaneeth Vijay</title>
-        <meta name="description" content="Navaneeth Vijay's portfolio" />
-      </Head>
       <div>
         <HeroSection />
         <section className="mx-auto py-10 bg-black">
@@ -46,7 +42,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex justify-center">
-                <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none ">
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                   <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                     <IconFileDownload className="h-4 w-4 mr-2" />
@@ -73,6 +69,14 @@ export default function HomePage() {
                     style={{ height: "232px" }}
                     className="object-cover w-full h-90 rounded-xl overflow-hidden flex items-stretch"
                     src="/bangalore.png"
+                    alt="family"
+                  />
+                </div>
+                <div className="col-span-2 md:hidden">
+                  <img
+                    style={{ height: "232px" }}
+                    className="object-cover w-full h-90 rounded-xl overflow-hidden flex items-stretch"
+                    src="/anime.jpg"
                     alt="family"
                   />
                 </div>
