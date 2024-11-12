@@ -6,10 +6,32 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { IconFileDownload, IconHammer, IconMenu3 } from "@tabler/icons-react";
+import DownloadResume from "./DownloadResume";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleHashClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    hash: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(hash);
+    if (element) {
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      setIsOpen(false);
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -39,23 +61,29 @@ export default function Header() {
 
   const NavLinks = () => (
     <div className="flex flex-col md:flex-row items-center gap-10">
-      <Link href="/articles" className={linkClass}>
+      <Link
+        href="#the-family-ties"
+        onClick={(e) => handleHashClick(e, "#the-family-ties")}
+        className={linkClass}
+      >
         About
       </Link>
 
-      <Link href="/articles" className={linkClass}>
-       Dev Tools
+      <Link
+        href="#the-family-business"
+        onClick={(e) => handleHashClick(e, "#the-family-business")}
+        className={linkClass}
+      >
+        Dev Tools
       </Link>
-      <Link href="/articles" className={linkClass}>
+      <Link
+        className={linkClass}
+        href="#the-portfolio-offer"
+        onClick={(e) => handleHashClick(e, "#the-portfolio-offer")}
+      >
         Work
       </Link>
-      <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none ">
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-          <IconFileDownload className="h-4 w-4 mr-2" />
-          Download Resume
-        </span>
-      </button>
+      <DownloadResume />
     </div>
   );
 
@@ -64,7 +92,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Logo />
         {isMobile ? (
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <IconMenu3 className="h-6 w-6 dark:text-white text-gray-800" />

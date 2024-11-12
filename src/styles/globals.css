@@ -5,7 +5,7 @@
 
 .graph-paper {
   width: 100%; /* Full-width */
-  background-color: #000; /* Graph paper color */
+  background-color: #000;
 
   /* Small squares (1px borders) */
   background-image: linear-gradient(to right, #080808 1px, transparent 1px),
