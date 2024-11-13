@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import { Cinzel_Decorative, Norican, Libre_Franklin } from "next/font/google";
 import Header from "@/components/project/Header";
+import Head from "next/head";
 
 const font = localFont({
   src: "./fonts/Corleone.otf",
@@ -37,6 +38,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <div
       className={`${font.variable} ${cinzel.variable} ${norican.variable} ${libreFranklin.variable}`}
     >
+      <Head>
+        <title>
+          Navaneeth Vijay | Full Stack Web Developer | UI/UX Design, Responsive
+          Websites
+        </title>
+      </Head>
       <Header />
       <Component {...pageProps} />
     </div>

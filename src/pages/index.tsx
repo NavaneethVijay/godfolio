@@ -23,32 +23,33 @@ import SectionHeadings from "@/components/project/SectionHeadings";
 import Intro from "@/components/project/IntroText";
 import Head from "next/head";
 import ContactMe from "@/components/project/contactMe";
+import DownloadResume from "@/components/project/DownloadResume";
+import Footer from "@/components/project/Footer";
 
 export default function HomePage() {
   return (
     <>
       <div>
         <HeroSection />
-        <section className="mx-auto py-10 bg-black">
+        <section className="mx-auto py-10 dark:bg-black">
           <SectionHeadings
+            id="the-family-ties"
             title="The Family Ties"
             description="It’s all about loyalty and drive."
           />
           <div className="relative">
-            {/* <img className="absolute top-0 left-0 " src="/strings.webp" alt="family" /> */}
+            <img
+              className="absolute top-1/4 left-0 opacity-30 "
+              src="/strings.png"
+              alt="family"
+            />
             <div className="max-w-4xl mx-auto">
               <div className="text-lg dark:text-neutral-300  text-neutral-500 mt-10 font-libre-franklin">
                 <Intro />
               </div>
 
               <div className="flex justify-center">
-                <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none ">
-                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                    <IconFileDownload className="h-4 w-4 mr-2" />
-                    Download Resume
-                  </span>
-                </button>
+                <DownloadResume />
               </div>
 
               <div className="grid grid-rows-[10rem] grid-cols-6 md:grid-cols-6 gap-6 px-6 md:px-0 mt-10  md:grid-rows-none">
@@ -84,7 +85,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="container mx-auto py-10">
+        <section className="max-w-6xl  mx-auto py-10 bg-neutral-900 md:rounded-xl ">
           <h3 className="text-2xl text-center lg:text-5xl font-godfather">
             "Instinctively conscientious and incredibly curious"
           </h3>
@@ -93,6 +94,7 @@ export default function HomePage() {
         <section className="mx-auto graph-paper py-10">
           <div className="mb-10">
             <SectionHeadings
+              id="the-family-business"
               title="The Family Business"
               description="Only the best tools in the business."
             />
@@ -103,8 +105,9 @@ export default function HomePage() {
           <Experience />
         </section>
         <section className="py-10">
-          <div className="mb-10">
+          <div className="my-10">
             <SectionHeadings
+              id="the-portfolio-offer"
               title="The Portfolio Offer"
               description="Projects you can’t refuse."
             />
@@ -119,6 +122,9 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <ContactMe />
           </div>
+        </section>
+        <section className="pt-10">
+          <Footer />
         </section>
       </div>
     </>

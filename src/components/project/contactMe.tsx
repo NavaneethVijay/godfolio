@@ -20,7 +20,10 @@ export default function ContactMe() {
     console.log("submitted");
   };
   return (
-    <div className="flex flex-col justify-center  items-center px-4">
+    <div className="flex flex-col justify-center items-center px-4">
+      <h3 className="text-center text-lg font-medium my-4 text-neutral-300 font-libreFranklin">
+        Drop in your email ID and I will get back to you.
+      </h3>
       <PlaceholdersAndVanishInput
         placeholders={placeholders}
         onChange={handleChange}

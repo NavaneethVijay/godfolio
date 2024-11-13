@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: "Self-hosted image optimizer",
     description:
       "This project aims to provide image optimization for your projects. It is heavily inspried by Next.js Under the hood it uses Squoosh from GoogleChromeLabs All the details of the codes are available here",
-    techStack: ["Next.js", "Squoosh", "TailwindCSS"],
+    techStack: ["Nodejs", "Javascript"],
     githubUrl: "https://github.com/NavaneethVijay/squoosh-server",
   },
   {
@@ -54,9 +54,9 @@ const projects: Project[] = [
     logoSvg: <IconAutomation className="h-10 w-10 text-neutral-600" />,
     title: "Automated Visual testing using backstopjs",
     description:
-      "Automated visual testing using backstopjs and playwright, generating reports and diffs for visual regression testing based on sitemap using custom cookies and localstorages",
-    techStack: ["Backstopjs", "Playwright", "Nodejs"],
-    githubUrl: "https://github.com/NavaneethVijay/backstopjs-ui",
+      "A self-hosted visual regression testing tool built on top of BackstopJS. Perfect for catching visual regressions before deploying to production.",
+    techStack: ["Backstopjs", "Playwright", "Nodejs", "React"],
+    githubUrl: "https://github.com/NavaneethVijay/backstopjs-visual-testing",
   },
   {
     logoSvg: <IconPhotoSpark className="h-10 w-10 text-neutral-600" />,

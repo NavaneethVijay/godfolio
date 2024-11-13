@@ -17,11 +17,6 @@ export default function Document() {
   return (
     <Html lang="en" className="dark">
       <Head>
-        <title>
-          Navaneeth Vijay | Full Stack Web Developer | UI/UX Design, Responsive
-          Websites
-        </title>
-
         <meta
           name="description"
           content="Navaneeth Vijay, a Full Stack Web Developer in Bengaluru, specializing in UI/UX Design, responsive web design, and building interactive websites."
