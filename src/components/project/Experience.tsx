@@ -8,11 +8,11 @@ export function Experience() {
     frontend: {
       title: "Frontend Development",
       skills: [
+        "Adobe Commerce (Magento)",
         "React.js & Next.js",
         "Redux & Context API",
         "Tailwind CSS",
-        "Material-UI & Chakra UI",
-        "React Native for mobile apps",
+        "React Native for mobile apps (Expo)",
       ],
     },
     backend: {
@@ -21,34 +21,24 @@ export function Experience() {
         "Node.js & Express.js",
         "RESTful APIs",
         "GraphQL",
+        "PHP",
         "Microservices Architecture",
-      ],
-    },
-    languages: {
-      title: "Languages",
-      skills: [
-        "Python (Django, Flask)",
-        "JavaScript/TypeScript",
-        "Java (Spring Boot)",
-        "HTML5 & CSS3",
-        "SQL",
       ],
     },
     databases: {
       title: "Databases & Storage",
       skills: [
-        "MongoDB & Mongoose",
         "MySQL & PostgreSQL",
         "Redis Cache",
-        "Firebase",
+        "Firebase, Supabase",
       ],
     },
     devops: {
       title: "DevOps & Cloud",
       skills: [
-        "AWS (EC2, S3, Lambda)",
+        "AWS EC2",
         "Docker & Kubernetes",
-        "CI/CD (Jenkins, GitHub Actions)",
+        "CI/CD (GitHub Actions)",
         "Version Control (Git)",
       ],
     },
@@ -57,7 +47,6 @@ export function Experience() {
       skills: [
         "VS Code, IntelliJ IDEA",
         "Postman for API testing",
-        "Figma for UI/UX design",
         "JIRA & Confluence",
         "npm & yarn package managers",
       ],
@@ -85,7 +74,7 @@ export function Experience() {
           description="Respect earned over time."
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
         {Object.entries(skillCategories).map(([key, { title, skills }]) => (
           <SkillSection key={key} title={title} skills={skills} />
         ))}

@@ -24,6 +24,7 @@ import Intro from "@/components/project/IntroText";
 import Head from "next/head";
 import ContactMe from "@/components/project/contactMe";
 import DownloadResume from "@/components/project/DownloadResume";
+import Footer from "@/components/project/Footer";
 
 export default function HomePage() {
   return (
@@ -84,7 +85,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="container mx-auto py-10">
+        <section className="max-w-6xl  mx-auto py-10 bg-neutral-900 md:rounded-xl ">
           <h3 className="text-2xl text-center lg:text-5xl font-godfather">
             "Instinctively conscientious and incredibly curious"
           </h3>
@@ -104,7 +105,7 @@ export default function HomePage() {
           <Experience />
         </section>
         <section className="py-10">
-          <div className="mb-10">
+          <div className="my-10">
             <SectionHeadings
               id="the-portfolio-offer"
               title="The Portfolio Offer"
@@ -121,6 +122,9 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <ContactMe />
           </div>
+        </section>
+        <section className="pt-10">
+          <Footer />
         </section>
       </div>
     </>
