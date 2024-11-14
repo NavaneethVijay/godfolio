@@ -1,25 +1,25 @@
 import React from "react";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, Document, MARKS } from "@contentful/rich-text-types";
 import { Highlight, themes } from "prism-react-renderer";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import RenderImage from "./renderImage";
 
-export default function parsedContent(content) {
-  const Bold = ({ children }) => (
+export default function parsedContent(content: Document) {
+  const Bold: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <strong className="font-bold">{children}</strong>
   );
 
   const options = {
     renderMark: {
-      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-      [MARKS.ITALIC]: (text) => <em className="italic">{text}</em>,
-      [MARKS.UNDERLINE]: (text) => <u className="underline">{text}</u>,
-      [MARKS.CODE]: (text) => {
+      [MARKS.BOLD]: (text: string) => <Bold>{text}</Bold>,
+      [MARKS.ITALIC]: (text: string) => <em className="italic">{text}</em>,
+      [MARKS.UNDERLINE]: (text: string) => <u className="underline">{text}</u>,
+      [MARKS.CODE]: (text: string) => {
         let code = text;
         const regex = /^lang:(\w+)/;
         let language = "javascript";
         if (regex.test(text)) {
-          language = regex.exec(text)[1];
+          language = regex.exec(text)![1];
           code = code.split("\n").slice(1).join("\n");
         }
 
@@ -49,20 +49,20 @@ export default function parsedContent(content) {
       },
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p className=" my-4 text-md">{children}</p>,
-      [BLOCKS.HEADING_1]: (node, children) => (
+      [BLOCKS.PARAGRAPH]: (node: any, children: any) => <p className=" my-4 text-md">{children}</p>,
+      [BLOCKS.HEADING_1]: (node: any, children: any) => (
         <h1 className="text-3xl font-bold mt-10 mb-4">{children}</h1>
       ),
-      [BLOCKS.HEADING_2]: (node, children) => (
+      [BLOCKS.HEADING_2]: (node: any, children: any) => (
         <h2 className="text-2xl font-semibold mt-10 mb-3">{children}</h2>
       ),
-      [BLOCKS.HEADING_3]: (node, children) => (
+      [BLOCKS.HEADING_3]: (node: any, children: any) => (
         <h3 className="text-xl font-semibold mt-10 mb-2">{children}</h3>
       ),
-      [BLOCKS.EMBEDDED_ASSET]: (node) => <RenderImage node={node} />,
+      [BLOCKS.EMBEDDED_ASSET]: (node: any) => <RenderImage node={node} />,
     },
-    renderText: (text) => text.replace("!", "?"),
-  };
+    renderText: (text: string) => text.replace("!", "?"),
+  } as Options;
 
-  return documentToReactComponents(content, options);
+  return documentToReactComponents(content, options) || null;
 }
