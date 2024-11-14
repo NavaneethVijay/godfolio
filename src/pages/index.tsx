@@ -115,17 +115,14 @@ export default function HomePage() {
           <Work />
         </section>
         <section className="container mx-auto py-10">
-          <SectionHeadings
-            title="The Connection Favor"
-            description="Let’s make an offer."
-          />
-          <div className="max-w-4xl mx-auto">
-            <ContactMe />
-          </div>
-        </section>
-        <section className="pt-10">
-          <Footer />
-        </section>
+        <SectionHeadings
+          title="The Connection Favor"
+          description="Let’s make an offer."
+        />
+        <div className="max-w-4xl mx-auto">
+          <ContactMe />
+        </div>
+      </section>
       </div>
     </>
   );

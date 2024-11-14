@@ -74,29 +74,20 @@ export default function Header() {
 
   const NavLinks = () => (
     <div className="flex flex-col md:flex-row flex-start md:items-center gap-10">
-      <Link
-        href="#the-family-ties"
-        onClick={(e) => handleHashClick(e, "#the-family-ties")}
+       <Link
+        href="/"
         className={linkClass}
       >
-        About
+        Home
+      </Link>
+      <Link
+        href="/blog"
+        className={linkClass}
+      >
+        Blog
       </Link>
       <Link href="/experience" className={linkClass}>
         Experience
-      </Link>
-      <Link
-        href="#the-family-business"
-        onClick={(e) => handleHashClick(e, "#the-family-business")}
-        className={linkClass}
-      >
-        Tools
-      </Link>
-      <Link
-        className={linkClass}
-        href="#the-portfolio-offer"
-        onClick={(e) => handleHashClick(e, "#the-portfolio-offer")}
-      >
-        Work
       </Link>
       <DownloadResume />
     </div>

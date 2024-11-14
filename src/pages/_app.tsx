@@ -4,6 +4,9 @@ import localFont from "next/font/local";
 import { Cinzel_Decorative, Norican, Libre_Franklin } from "next/font/google";
 import Header from "@/components/project/Header";
 import Head from "next/head";
+import ContactMe from "@/components/project/contactMe";
+import Footer from "@/components/project/Footer";
+import SectionHeadings from "@/components/project/SectionHeadings";
 
 const font = localFont({
   src: "./fonts/Corleone.otf",
@@ -46,6 +49,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <section className="pt-10">
+        <Footer />
+      </section>
     </div>
   );
 }
