@@ -11,6 +11,6 @@ export default async function handler(
   res: NextApiResponse<Data>,
 ) {
   const id = req.query.id
-  const data = await fetchAssest(id);
+  const data = await fetchAssest(id as string);
   res.status(200).json(data);
 }
