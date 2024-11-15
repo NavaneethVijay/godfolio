@@ -26,7 +26,7 @@ import Link from "next/link";
 
 export function ProjectsGrid() {
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 px-6 md:px-0">
       <BentoGrid className="md:auto-rows-[22rem] grid-cols-1 md:grid-cols-4">
         {items.map((item, i) => (
           <BentoGridItem

@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts, getBlogPost } from "@/lib/contentful";
 import parsedContent from "@/components/parsedContent";
+import { IconArrowBack, IconBackhoe } from "@tabler/icons-react";
 
 export default function BlogPostPage({ post }: any) {
   if (!post) return null;
@@ -14,14 +15,17 @@ export default function BlogPostPage({ post }: any) {
       </Head>
 
       <div className="mt-20">
-        <article className="container mx-auto py-10 px-4">
+        <article className="container mx-auto md:py-10 px-6 md:px-4">
+          <div className="mb-4">
+            <Link className="text-neutral-400 flex items-center gap-1 text-sm" href="/blog"> <IconArrowBack /> Back to Blog</Link>
+          </div>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold mb-4 font-libreFranklin text-neutral-800 dark:text-neutral-200">
+            <h1 className="text-xl md:text-4xl font-bold mb-4 font-libreFranklin text-neutral-800 dark:text-neutral-200">
               {post.title}
             </h1>
-            <div className="flex gap-1">
+            <div className="text-sm text-neutral-500 dark:text-neutral-400  flex gap-1">
             <span>Navaneeth Vijay / </span>
-            <time className="text-neutral-500 dark:text-neutral-400 mb-8 block">
+            <time className="block">
               {new Date(post.publishedDate).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",

@@ -6,7 +6,7 @@ import SectionHeadings from "@/components/project/SectionHeadings";
 
 export default function BlogIndex({ posts }: { posts: any[] }) {
   return (
-    <>
+    <div className="max-w-5xl mx-auto px-6 md:px-0">
       <Head>
         <title>Blog | Navaneeth Vijay</title>
         <meta
@@ -21,7 +21,7 @@ export default function BlogIndex({ posts }: { posts: any[] }) {
           description="Stories from the trenches of web development"
         />
       </section>
-      <div className="max-w-5xl mx-auto py-10">
+      <div className="py-10">
         <div>
           {posts.map((post) => (
             <Link
@@ -45,7 +45,7 @@ export default function BlogIndex({ posts }: { posts: any[] }) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

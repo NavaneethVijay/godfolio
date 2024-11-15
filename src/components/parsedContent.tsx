@@ -32,7 +32,7 @@ export default function parsedContent(content: Document) {
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <pre
                 suppressHydrationWarning
-                className={`${className} p-4 rounded-lg overflow-x-auto`}
+                className={`${className} p-4 rounded-lg overflow-x-auto text-sm md:text-base`}
                 style={style}
               >
                 {tokens.map((line, i) => (

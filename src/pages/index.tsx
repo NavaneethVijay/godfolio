@@ -52,7 +52,13 @@ export default function HomePage() {
                 <DownloadResume />
               </div>
 
-              <div className="grid grid-rows-[10rem] grid-cols-6 md:grid-cols-6 gap-6 px-6 md:px-0 mt-10  md:grid-rows-none">
+              <div className="mt-16 mb-10">
+                <p className="text-center dark:text-neutral-300 font-norican text-2xl">
+                  "Every great tale deserves a fitting score; let the music
+                  accompany your exploration."
+                </p>
+              </div>
+              <div className="grid grid-rows-[10rem] grid-cols-6 md:grid-cols-6 gap-6 px-6 md:px-0 md:grid-rows-none">
                 <div className="rounded-xl col-span-6 md:col-span-4 flex flex-col">
                   <iframe
                     style={{ borderRadius: "12px" }}
@@ -101,7 +107,7 @@ export default function HomePage() {
           </div>
           <ProjectsGrid />
         </section>
-        <section className="container mx-auto py-10">
+        <section className="container mx-auto px-6 md:px-0 wpy-10">
           <Experience />
         </section>
         <section className="py-10">
@@ -115,14 +121,14 @@ export default function HomePage() {
           <Work />
         </section>
         <section className="container mx-auto py-10">
-        <SectionHeadings
-          title="The Connection Favor"
-          description="Let’s make an offer."
-        />
-        <div className="max-w-4xl mx-auto">
-          <ContactMe />
-        </div>
-      </section>
+          <SectionHeadings
+            title="The Connection Favor"
+            description="Let’s make an offer."
+          />
+          <div className="max-w-4xl mx-auto">
+            <ContactMe />
+          </div>
+        </section>
       </div>
     </>
   );

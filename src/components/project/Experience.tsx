@@ -58,7 +58,7 @@ export function Experience() {
       <h3 className="font-semibold mb-2 font-libreFranklint">{title}</h3>
       <ul className="list-disc pl-5 ">
         {skills.map((skill, index) => (
-          <li className="font-libreFranklin dark:text-neutral-300 tracking-wide font-libreFranklint" key={index}>
+          <li className="text-sm md:text-lg font-libreFranklin dark:text-neutral-300 tracking-wide font-libreFranklint" key={index}>
             {skill}
           </li>
         ))}

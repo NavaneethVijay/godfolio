@@ -16,7 +16,6 @@ export default function SectionHeadings({
         className="text-3xl max-w-4xl mx-auto relative text-neutral-800 lg:text-5xl font-bold font-cinzel bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r
       from-yellow-800 via-yellow-500 to-yellow-200 "
       >
-        {/* <IconBrandRedhat className="absolute top-0 left-[30%] transform -translate-x-1/2 -translate-y-12 w-20 h-20 text-neutral-900 z-0" /> */}
         {title}
       </h2>
       <div className="flex items-center mt-4  max-w-4xl mx-auto">

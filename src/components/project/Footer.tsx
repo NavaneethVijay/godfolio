@@ -49,8 +49,8 @@ export default function Footer() {
         ))}
       </div>
       <hr className="w-full border-1 border-gray-200 dark:border-gray-900 mb-6" />
-      <p className="flex flex-row text-neutral-300 items-center">
-        Designed and Developed with <IconHeartFilled className="text-red-500 ml-2" />
+      <p className="flex text-sm flex-row text-neutral-500 items-center">
+        Designed and Developed with <IconHeartFilled className=" w-4 h-4 text-red-500 ml-2" />
       </p>
     </footer>
   );
