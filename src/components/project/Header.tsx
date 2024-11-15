@@ -16,34 +16,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const handleHashClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    hash: string
-  ) => {
-    e.preventDefault();
 
-    // Check if we're on the home page
-    if (window.location.pathname !== '/') {
-      // If not on home page, navigate to home page with hash using router
-      router.push('/' + hash);
-      return;
-    }
-
-    // If we are on home page, smooth scroll
-    const element = document.querySelector(hash);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      setIsOpen(false);
-    }
-  };
 
   useEffect(() => {
     setIsMounted(true);
@@ -74,29 +47,22 @@ export default function Header() {
 
   const NavLinks = () => (
     <div className="flex flex-col md:flex-row flex-start md:items-center gap-10">
-      <Link
-        href="#the-family-ties"
-        onClick={(e) => handleHashClick(e, "#the-family-ties")}
+       <Link
+        href="/"
+        onClick={() =>  setIsOpen(false)}
         className={linkClass}
       >
-        About
+        Home
       </Link>
-      <Link href="/experience" className={linkClass}>
+      <Link
+        href="/blog"
+        onClick={() => setIsOpen(false)}
+        className={linkClass}
+      >
+        Blog
+      </Link>
+      <Link href="/experience"  onClick={() => setIsOpen(false)} className={linkClass}>
         Experience
-      </Link>
-      <Link
-        href="#the-family-business"
-        onClick={(e) => handleHashClick(e, "#the-family-business")}
-        className={linkClass}
-      >
-        Tools
-      </Link>
-      <Link
-        className={linkClass}
-        href="#the-portfolio-offer"
-        onClick={(e) => handleHashClick(e, "#the-portfolio-offer")}
-      >
-        Work
       </Link>
       <DownloadResume />
     </div>
