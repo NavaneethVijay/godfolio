@@ -4,6 +4,7 @@ import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import {
   Icon12Hours,
+  IconArrowUpRight,
   IconBoxAlignRightFilled,
   IconBrandAuth0,
   IconBrandReact,
@@ -12,8 +13,10 @@ import {
   IconBrandVscode,
   IconBrowser,
   IconClipboardCopy,
+  IconCornerRightUp,
   IconDatabaseCog,
   IconFileBroken,
+  IconLink,
   IconServer2,
   IconSignature,
   IconSubtask,
@@ -320,7 +323,7 @@ const items = [
   {
     title: (
       <Link href="https://www.warp.dev/" target="_blank" className="underline">
-        Warp Terminal
+          Warp Terminal
       </Link>
     ),
     description: (

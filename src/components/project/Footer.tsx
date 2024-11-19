@@ -1,4 +1,4 @@
-import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
+import { IconArrowUpRight, IconHeart, IconHeartFilled } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
@@ -34,7 +34,7 @@ export default function Footer() {
         rel: "noopener noreferrer"
       })}
     >
-      {text}
+      {text} <IconArrowUpRight className="inline-block w-4 h-4 text-neutral-400" />
     </Link>
   );
 

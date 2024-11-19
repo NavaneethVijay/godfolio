@@ -40,7 +40,7 @@ const projects: Project[] = [
     description:
       "A standalone custom ecommerce cart rules creator for marketing campaigns using node.js with PIM and OMS integrations options",
     techStack: ["Node.js", "Redis", "Typescript", "Postgres"],
-    githubUrl: "https://github.com/NavaneethVijay/cart-rules-engine",
+    githubUrl: "https://github.com/NavaneethVijay/rule-engine-api",
   },
   {
     logoSvg: <IconBrandGmail className="h-10 w-10 text-neutral-600" />,
