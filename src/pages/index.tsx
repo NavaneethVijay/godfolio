@@ -34,8 +34,8 @@ export default function HomePage() {
         <section className="mx-auto py-10 dark:bg-black">
           <SectionHeadings
             id="the-family-ties"
-            title="The Family Ties"
-            description="It’s all about loyalty and drive."
+            title="The Roots of the Journey"
+            description="Where loyalty meets ambition, the story begins."
           />
           <div className="relative">
             <img

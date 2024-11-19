@@ -82,7 +82,7 @@ export default function Header() {
                     <span className="sr-only">Toggle menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent>
+                <SheetContent className="border-none">
                   <nav className="flex flex-col space-y-4 mt-8">
                     <NavLinks />
                   </nav>
