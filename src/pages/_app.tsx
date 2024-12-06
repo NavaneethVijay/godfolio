@@ -4,9 +4,10 @@ import localFont from "next/font/local";
 import { Cinzel_Decorative, Norican, Libre_Franklin } from "next/font/google";
 import Header from "@/components/project/Header";
 import Head from "next/head";
-import ContactMe from "@/components/project/contactMe";
 import Footer from "@/components/project/Footer";
-import SectionHeadings from "@/components/project/SectionHeadings";
+import Script from "next/script";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const font = localFont({
   src: "./fonts/Corleone.otf",
@@ -36,7 +37,26 @@ const libreFranklin = Libre_Franklin({
   variable: "--font-libre-franklin",
 });
 
+const GA_TRACKING_ID = "G-RVL8C302NE";
+
+const handleRouteChange = (url: string) => {
+  if (typeof window.gtag === "function") {
+    window.gtag("config", GA_TRACKING_ID, {
+      page_path: url,
+    });
+  }
+};
+
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <div
       className={`${font.variable} ${cinzel.variable} ${norican.variable} ${libreFranklin.variable}`}
@@ -47,6 +67,20 @@ export default function App({ Component, pageProps }: AppProps) {
           Websites
         </title>
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-RVL8C302NE"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
       <Header />
       <Component {...pageProps} />
       <section className="pt-10">
